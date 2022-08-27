@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
-import ~cb-service-name~Datatable from "./~cb-service-name~DataTable";
+import ~cb-service-name-capitalize~Datatable from "./~cb-service-name-capitalize~DataTable";
 import _ from "lodash";
 
-const ~cb-service-name~Page = (props) => {
+const ~cb-service-name-capitalize~Page = (props) => {
     const history = useHistory();
     const [data, setData] = useState([]);
     useEffect(() => {
@@ -21,11 +21,11 @@ const ~cb-service-name~Page = (props) => {
     return (
         <div className="col-12 flex flex-column align-items-center">
             <div className="col-10">
-                <h5 className="mb-0 ml-2">~cb-service-name~</h5>
+                <h5 className="mb-0 ml-2">~cb-service-name-capitalize~</h5>
             </div>
             <div className="grid col-10">
                 <div className="col-12 lg:col-6 xl:col-4">
-                    <~cb-service-name~Datatable items={data} onColumnChange={onColumnChangeHandler} /*onRowDelete*/ />
+                    <~cb-service-name-capitalize~Datatable items={data} onColumnChange={onColumnChangeHandler} /*onRowDelete*/ />
                 </div>
             </div>
             {/* save button */}
@@ -37,4 +37,4 @@ const mapDispatch = (dispatch) => ({
     //
 });
 
-export default connect(mapState, mapDispatch)(~cb-service-name~Page);
+export default connect(mapState, mapDispatch)(~cb-service-name-capitalize~Page);
