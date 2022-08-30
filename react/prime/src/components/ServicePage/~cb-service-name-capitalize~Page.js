@@ -3,14 +3,20 @@ import { connect } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import ~cb-service-name-capitalize~Datatable from "./~cb-service-name-capitalize~DataTable";
 import _ from "lodash";
+import axios from "axios";
+import { serverUrl } from "../../assets/cb_config.json";
 
 const ~cb-service-name-capitalize~Page = (props) => {
     const history = useHistory();
     const [data, setData] = useState([]);
     useEffect(() => {
         //on mount
-        //axios api call
-        // setlist(res.data)
+        axios
+        .get(serverUrl + "/~cb-service-name~")
+        .then((res) => {
+            setData(res.data.data);
+        })
+        .catch((error) => console.log(error));
     }, []);
 
     const onColumnChangeHandler = (index, subKey, newVal) => {
@@ -24,7 +30,7 @@ const ~cb-service-name-capitalize~Page = (props) => {
                 <h5 className="mb-0 ml-2">~cb-service-name-capitalize~</h5>
             </div>
             <div className="grid col-10">
-                <div className="col-12 lg:col-6 xl:col-4">
+                <div className="col-12">
                     <~cb-service-name-capitalize~Datatable items={data} onColumnChange={onColumnChangeHandler} /*onRowDelete*/ />
                 </div>
             </div>
@@ -32,7 +38,9 @@ const ~cb-service-name-capitalize~Page = (props) => {
         </div>
     );
 };
-const mapState = (state) => ({});
+const mapState = (state) => ({
+    //
+});
 const mapDispatch = (dispatch) => ({
     //
 });
