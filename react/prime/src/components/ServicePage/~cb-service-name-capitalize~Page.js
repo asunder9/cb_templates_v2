@@ -24,6 +24,11 @@ const ~cb-service-name-capitalize~Page = (props) => {
         _newData[index][subKey] = newVal;
         setData(_newData);
     };
+    const onRowDelete = (index) => {
+        let _newData = data.filter((_, i) => i !== index);
+        setData(_newData);
+    };
+    
     return (
         <div className="col-12 flex flex-column align-items-center">
             <div className="col-10">
@@ -31,7 +36,7 @@ const ~cb-service-name-capitalize~Page = (props) => {
             </div>
             <div className="grid col-10">
                 <div className="col-12">
-                    <~cb-service-name-capitalize~Datatable items={data} onColumnChange={onColumnChangeHandler} /*onRowDelete*/ />
+                    <~cb-service-name-capitalize~Datatable items={data} onColumnChange={onColumnChangeHandler} onRowDelete={onRowDelete} />
                 </div>
             </div>
             {/* save button */}
