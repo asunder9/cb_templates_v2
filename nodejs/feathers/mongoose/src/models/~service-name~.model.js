@@ -5,7 +5,11 @@ module.exports = function (app) {
     const modelName = '~service-name~';
     const mongooseClient = app.get('mongooseClient');
     const { Schema } = mongooseClient;
-    const schema = new Schema(~schema~, {
+    const schema = new Schema(
+      // ~cb-read-start~
+      ~cb-schema~, 
+      // ~cb-read-end~
+      {
       timestamps: true
     });
   
