@@ -1,14 +1,14 @@
 // See http://mongoosejs.com/docs/models.html
 // for more of what you can do here.
-const { ObjectId } = require("mongoose").Types;
 module.exports = function (app) {
     const modelName = '~service-name~';
     const mongooseClient = app.get('mongooseClient');
     const { Schema } = mongooseClient;
     const schema = new Schema(
       // ~cb-read-start~
-      ~cb-schema~, 
+      ~cb-schema~
       // ~cb-read-end~
+      , 
       {
       timestamps: true
     });
